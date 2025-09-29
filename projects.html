@@ -15,15 +15,16 @@
       line-height: 1.6;
     }
     .nav {
-      padding: 1em 1.5em;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      left: 0;
+      width: 200px;
+      height: 100vh;
       background: #FFFFFF;
-      border-bottom: 1px solid #000000;
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
     .nav .name {
       font-size: 1.4em;
@@ -31,15 +32,17 @@
       color: #000000;
       text-decoration: none;
       text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.5em;
     }
     .nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
     }
     .nav li {
-      margin-left: 1.5em;
+      margin: 0.8em 0;
     }
     .nav a {
       color: #000000;
@@ -51,11 +54,10 @@
     .nav a:hover {
       opacity: 0.7;
     }
-    .container {
+    .main-content {
+      margin-left: 220px;
       max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1.5em;
-      padding-top: 3em;
+      padding: 2em 1.5em;
     }
     .projects h2 {
       font-size: 1.8em;
@@ -88,6 +90,7 @@
       padding: 1em 0;
       font-size: 0.9em;
       border-top: 1px solid #000000;
+      margin-left: 220px;
     }
     footer a {
       color: #000000;
@@ -100,22 +103,17 @@
     }
     @media (max-width: 600px) {
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1em;
       }
-      .nav .name {
-        margin-bottom: 0.5em;
+      .main-content {
+        margin-left: 0;
+        padding: 1em;
       }
-      .nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      .nav li {
-        margin: 0.5em 0;
-      }
-      .container {
-        margin: 1em;
-        padding-top: 4em;
+      footer {
+        margin-left: 0;
       }
       .projects h2 {
         font-size: 1.5em;
@@ -132,7 +130,7 @@
       <li><a href="contact.html">Contact Me</a></li>
     </ul>
   </nav>
-  <div class="container">
+  <div class="main-content">
     <section class="projects">
       <h2>My Projects</h2>
       <div class="project-item">
