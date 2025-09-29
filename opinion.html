@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Your Name] - Contact Me</title>
+  <title>[Your Name] - Opinion</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -15,15 +15,16 @@
       line-height: 1.6;
     }
     .nav {
-      padding: 1em 1.5em;
-      position: sticky;
+      position: fixed;
       top: 0;
-      z-index: 100;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      left: 0;
+      width: 200px;
+      height: 100vh;
       background: #FFFFFF;
-      border-bottom: 1px solid #000000;
+      padding: 1.5em;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
     }
     .nav .name {
       font-size: 1.4em;
@@ -31,15 +32,17 @@
       color: #000000;
       text-decoration: none;
       text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      margin-bottom: 1.5em;
     }
     .nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
       display: flex;
+      flex-direction: column;
     }
     .nav li {
-      margin-left: 1.5em;
+      margin: 0.8em 0;
     }
     .nav a {
       color: #000000;
@@ -51,64 +54,34 @@
     .nav a:hover {
       opacity: 0.7;
     }
-    .container {
+    .main-content {
+      margin-left: 220px;
       max-width: 800px;
-      margin: 2em auto;
-      padding: 0 1.5em;
-      padding-top: 3em;
+      padding: 2em 1.5em;
     }
-    .contact h2 {
+    .opinion h2 {
       font-size: 1.8em;
       color: #000000;
       text-align: center;
       margin-bottom: 1em;
       font-weight: 700;
     }
-    .contact p {
+    .opinion p {
       font-size: 1.1em;
       margin: 0.8em 0;
       color: #333333;
     }
-    .contact a {
+    .opinion a {
       color: #000000;
       text-decoration: underline;
       font-weight: 400;
       transition: opacity 0.3s ease;
     }
-    .contact a:hover {
+    .opinion a:hover {
       opacity: 0.7;
     }
-    .contact form {
-      max-width: 500px;
-      margin: 0 auto;
-    }
-    .contact input, .contact textarea {
-      width: 100%;
-      padding: 0.8em;
-      margin: 0.5em 0;
-      border: 1px solid #000000;
-      border-radius: 5px;
-      font-family: 'Inter', sans-serif;
-      font-size: 1em;
-    }
-    .contact textarea {
-      height: 120px;
-      resize: vertical;
-    }
-    .btn {
-      display: inline-block;
-      padding: 0.8em 1.5em;
-      background: #000000;
-      color: #FFFFFF;
-      text-decoration: none;
-      border-radius: 5px;
-      font-weight: 400;
-      border: none;
-      cursor: pointer;
-      transition: opacity 0.3s ease;
-    }
-    .btn:hover {
-      opacity: 0.7;
+    .opinion-item {
+      margin-bottom: 1.5em;
     }
     footer {
       background: transparent;
@@ -117,6 +90,7 @@
       padding: 1em 0;
       font-size: 0.9em;
       border-top: 1px solid #000000;
+      margin-left: 220px;
     }
     footer a {
       color: #000000;
@@ -129,24 +103,19 @@
     }
     @media (max-width: 600px) {
       .nav {
-        flex-direction: column;
-        align-items: flex-start;
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1em;
       }
-      .nav .name {
-        margin-bottom: 0.5em;
+      .main-content {
+        margin-left: 0;
+        padding: 1em;
       }
-      .nav ul {
-        flex-direction: column;
-        align-items: flex-start;
+      footer {
+        margin-left: 0;
       }
-      .nav li {
-        margin: 0.5em 0;
-      }
-      .container {
-        margin: 1em;
-        padding-top: 4em;
-      }
-      .contact h2 {
+      .opinion h2 {
         font-size: 1.5em;
       }
     }
@@ -161,16 +130,19 @@
       <li><a href="contact.html">Contact Me</a></li>
     </ul>
   </nav>
-  <div class="container">
-    <section class="contact">
-      <h2>Contact Me</h2>
-      <p>Have a question or want to connect? Use the form below or email me at <a href="mailto:[your.email@example.com]">[your.email@example.com]</a>.</p>
-      <form action="https://formspree.io/f/[your-form-id]" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  <div class="main-content">
+    <section class="opinion">
+      <h2>My Thoughts</h2>
+      <div class="opinion-item">
+        <h3>[Topic, e.g., The Power of Storytelling]</h3>
+        <p>[Share your opinion, e.g., Stories connect us in ways data alone cannot, shaping how we understand the world.]</p>
+        <p><a href="[optional-link, e.g., https://example.com/article]" target="_blank">Read More</a></p>
+      </div>
+      <div class="opinion-item">
+        <h3>[Topic, e.g., Balancing Technology and Nature]</h3>
+        <p>[Share your opinion, e.g., We need to integrate green spaces into tech-driven cities for well-being.]</p>
+      </div>
+      <p>More thoughts to be shared soon!</p>
     </section>
   </div>
   <footer>
