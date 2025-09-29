@@ -1,28 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects - My Website</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Your Name] - Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+      color: #000000;
+      line-height: 1.6;
+    }
+    .nav {
+      padding: 1em 1.5em;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #FFFFFF;
+      border-bottom: 1px solid #000000;
+    }
+    .nav .name {
+      font-size: 1.4em;
+      font-weight: 700;
+      color: #000000;
+      text-decoration: none;
+      text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    }
+    .nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    .nav li {
+      margin-left: 1.5em;
+    }
+    .nav a {
+      color: #000000;
+      text-decoration: none;
+      font-size: 1em;
+      font-weight: 400;
+      transition: opacity 0.3s ease;
+    }
+    .nav a:hover {
+      opacity: 0.7;
+    }
+    .container {
+      max-width: 800px;
+      margin: 2em auto;
+      padding: 0 1.5em;
+      padding-top: 3em;
+    }
+    .projects h2 {
+      font-size: 1.8em;
+      color: #000000;
+      text-align: center;
+      margin-bottom: 1em;
+      font-weight: 700;
+    }
+    .projects p {
+      font-size: 1.1em;
+      margin: 0.8em 0;
+      color: #333333;
+    }
+    .projects a {
+      color: #000000;
+      text-decoration: underline;
+      font-weight: 400;
+      transition: opacity 0.3s ease;
+    }
+    .projects a:hover {
+      opacity: 0.7;
+    }
+    .project-item {
+      margin-bottom: 1.5em;
+    }
+    footer {
+      background: transparent;
+      color: #000000;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 0.9em;
+      border-top: 1px solid #000000;
+    }
+    footer a {
+      color: #000000;
+      text-decoration: none;
+      margin: 0 0.5em;
+      transition: opacity 0.3s ease;
+    }
+    footer a:hover {
+      opacity: 0.7;
+    }
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav .name {
+        margin-bottom: 0.5em;
+      }
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav li {
+        margin: 0.5em 0;
+      }
+      .container {
+        margin: 1em;
+        padding-top: 4em;
+      }
+      .projects h2 {
+        font-size: 1.5em;
+      }
+    }
+  </style>
 </head>
 <body>
-  <nav>
-    <h1>My Webpage</h1>
+  <nav class="nav">
+    <a href="index.html" class="name">[Your Name]</a>
     <ul>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="opinion.html">Opinion</a></li>
       <li><a href="contact.html">Contact Me</a></li>
     </ul>
   </nav>
-
-  <section>
-    <h2>Projects</h2>
-    <p>Here are some of my projects:</p>
-    <ul>
-      <li><strong>Project 1:</strong> Description with <a href="#">link</a></li>
-      <li><strong>Project 2:</strong> Description with <a href="#">link</a></li>
-    </ul>
-  </section>
+  <div class="container">
+    <section class="projects">
+      <h2>My Projects</h2>
+      <div class="project-item">
+        <h3>Project 1: [Project Name]</h3>
+        <p>[Describe your project, e.g., Built a personal blog using HTML and CSS, featuring a custom design.]</p>
+        <p><a href="[project-link, e.g., https://github.com/yourusername/project]" target="_blank">View Project</a></p>
+      </div>
+      <div class="project-item">
+        <h3>Project 2: [Project Name]</h3>
+        <p>[Describe your project, e.g., Created a community workshop on sustainable practices.]</p>
+        <p><a href="[project-link, e.g., https://example.com]" target="_blank">Learn More</a></p>
+      </div>
+      <p>More projects coming soon!</p>
+    </section>
+  </div>
+  <footer>
+    <p>Connect with me: 
+      <a href="[your-social-media-link, e.g., https://linkedin.com/in/yourprofile]" target="_blank">LinkedIn</a> | 
+      <a href="[your-social-media-link, e.g., https://twitter.com/yourprofile]" target="_blank">Twitter</a> | 
+      <a href="[your-other-link, e.g., https://instagram.com/yourprofile]" target="_blank">Instagram</a>
+    </p>
+    <p>&copy; 2025 [Your Name]. Last updated: September 2025</p>
+  </footer>
 </body>
 </html>
