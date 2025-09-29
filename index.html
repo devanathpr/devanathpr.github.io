@@ -3,75 +3,86 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Personal Website</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <title>[Your Name] - Personal Website</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    h1, h2, h3 { font-family: 'Poppins', sans-serif; }
+  </style>
 </head>
-<body>
-  <!-- Navigation -->
-  <nav>
-    <h1>My Webpage</h1>
-    <ul>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#opinion">Opinion</a></li>
-      <li><a href="#contact">Contact Me</a></li>
-    </ul>
+<body class="bg-white text-slate-800">
+  <!-- Navbar -->
+  <nav class="sticky top-0 bg-white shadow z-50">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-2xl font-bold text-blue-600">MyWeb</h1>
+      <ul class="flex gap-6 text-lg">
+        <li><a href="#projects" class="hover:text-blue-600">Projects</a></li>
+        <li><a href="#opinion" class="hover:text-blue-600">Opinion</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <!-- Hero Section -->
-  <header class="hero">
-    <h2>Hi, I’m [Your Name]</h2>
-    <p>Welcome to my personal website. Here you can find my work, opinions, and ways to connect.</p>
+  <!-- Hero -->
+  <header class="text-center py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+    <h2 class="text-4xl md:text-6xl font-bold mb-4">Hi, I’m [Your Name]</h2>
+    <p class="text-lg md:text-xl mb-6 max-w-2xl mx-auto">
+      A place where I share my projects, thoughts, and ways to connect with me.
+    </p>
+    <a href="#projects" class="px-6 py-3 bg-white text-blue-600 rounded-lg shadow hover:bg-slate-100 transition">See My Work</a>
   </header>
 
   <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Project One</h3>
-        <p>A short description of your project goes here.</p>
+  <section id="projects" class="max-w-6xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Projects</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white shadow-lg rounded-xl p-6 hover:-translate-y-2 transition">
+        <h3 class="text-xl font-semibold mb-2">Project One</h3>
+        <p class="text-slate-600">A cool project with description and link.</p>
       </div>
-      <div class="card">
-        <h3>Project Two</h3>
-        <p>Another project description with highlights.</p>
+      <div class="bg-white shadow-lg rounded-xl p-6 hover:-translate-y-2 transition">
+        <h3 class="text-xl font-semibold mb-2">Project Two</h3>
+        <p class="text-slate-600">Another exciting project I’ve built.</p>
       </div>
-      <div class="card">
-        <h3>Project Three</h3>
-        <p>Something cool you built that you want to show off.</p>
+      <div class="bg-white shadow-lg rounded-xl p-6 hover:-translate-y-2 transition">
+        <h3 class="text-xl font-semibold mb-2">Project Three</h3>
+        <p class="text-slate-600">Something I’m really proud of.</p>
       </div>
     </div>
   </section>
 
   <!-- Opinion -->
-  <section id="opinion">
-    <h2>Opinion</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>Blog Post 1</h3>
-        <p>Your thoughts, reflections, or analysis go here.</p>
-      </div>
-      <div class="card">
-        <h3>Blog Post 2</h3>
-        <p>Another entry — maybe about tech, learning, or life.</p>
+  <section id="opinion" class="bg-slate-50 py-16">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Opinion</h2>
+      <div class="space-y-6">
+        <div class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold">Blog Post Title</h3>
+          <p class="text-slate-600 mt-2">A short excerpt of your opinion post.</p>
+        </div>
+        <div class="bg-white p-6 rounded-lg shadow hover:-translate-y-1 transition">
+          <h3 class="text-xl font-semibold">Another Post</h3>
+          <p class="text-slate-600 mt-2">Another idea or reflection here.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="5" placeholder="Your Message"></textarea>
-      <button type="submit">Send Message</button>
+  <section id="contact" class="max-w-3xl mx-auto px-6 py-16">
+    <h2 class="text-3xl font-bold text-center mb-12 text-blue-600">Contact Me</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 border rounded-lg">
+      <input type="email" placeholder="Your Email" class="w-full p-3 border rounded-lg">
+      <textarea rows="5" placeholder="Your Message" class="w-full p-3 border rounded-lg"></textarea>
+      <button type="submit" class="px-6 py-3 bg-blue-600 text-white rounded-lg shadow hover:bg-blue-700 transition">Send Message</button>
     </form>
   </section>
 
   <!-- Footer -->
-  <footer>
-    <p>© 2025 Your Name. Built with GitHub Pages.</p>
+  <footer class="text-center py-6 bg-slate-100 text-slate-600">
+    © 2025 Your Name · Built with GitHub Pages
   </footer>
 </body>
 </html>
