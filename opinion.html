@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Your Name] - Opinion</title>
+  <title>[Your Name] - Contact Me</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -57,29 +57,58 @@
       padding: 0 1.5em;
       padding-top: 3em;
     }
-    .opinion h2 {
+    .contact h2 {
       font-size: 1.8em;
       color: #000000;
       text-align: center;
       margin-bottom: 1em;
       font-weight: 700;
     }
-    .opinion p {
+    .contact p {
       font-size: 1.1em;
       margin: 0.8em 0;
       color: #333333;
     }
-    .opinion a {
+    .contact a {
       color: #000000;
       text-decoration: underline;
       font-weight: 400;
       transition: opacity 0.3s ease;
     }
-    .opinion a:hover {
+    .contact a:hover {
       opacity: 0.7;
     }
-    .opinion-item {
-      margin-bottom: 1.5em;
+    .contact form {
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 0.8em;
+      margin: 0.5em 0;
+      border: 1px solid #000000;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+      font-size: 1em;
+    }
+    .contact textarea {
+      height: 120px;
+      resize: vertical;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.8em 1.5em;
+      background: #000000;
+      color: #FFFFFF;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 400;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.3s ease;
+    }
+    .btn:hover {
+      opacity: 0.7;
     }
     footer {
       background: transparent;
@@ -117,7 +146,7 @@
         margin: 1em;
         padding-top: 4em;
       }
-      .opinion h2 {
+      .contact h2 {
         font-size: 1.5em;
       }
     }
@@ -133,18 +162,15 @@
     </ul>
   </nav>
   <div class="container">
-    <section class="opinion">
-      <h2>My Thoughts</h2>
-      <div class="opinion-item">
-        <h3>[Topic, e.g., The Power of Storytelling]</h3>
-        <p>[Share your opinion, e.g., Stories connect us in ways data alone cannot, shaping how we understand the world.]</p>
-        <p><a href="[optional-link, e.g., https://example.com/article]" target="_blank">Read More</a></p>
-      </div>
-      <div class="opinion-item">
-        <h3>[Topic, e.g., Balancing Technology and Nature]</h3>
-        <p>[Share your opinion, e.g., We need to integrate green spaces into tech-driven cities for well-being.]</p>
-      </div>
-      <p>More thoughts to be shared soon!</p>
+    <section class="contact">
+      <h2>Contact Me</h2>
+      <p>Have a question or want to connect? Use the form below or email me at <a href="mailto:[your.email@example.com]">[your.email@example.com]</a>.</p>
+      <form action="https://formspree.io/f/[your-form-id]" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
     </section>
   </div>
   <footer>
