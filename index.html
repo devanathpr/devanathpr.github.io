@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devanath P R</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet"> <!-- Added: Import Bangers for comic relief font -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -30,12 +30,12 @@
       font-family: 'Patrick Hand', handwriting;
     }
     .nav .name {
-      font-size: 1.4em;
-      font-weight: 700;
+      font-size: 1.6em;
       color: #4682B4;
       text-decoration: none;
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       margin-bottom: 1.5em;
+      letter-spacing: 0.05em;
     }
     .nav ul {
       list-style: none;
@@ -50,12 +50,13 @@
     .nav a {
       color: #000000;
       text-decoration: none;
-      font-size: 1em;
-      font-weight: 400;
-      transition: opacity 0.3s ease;
+      font-size: 1.2em;
+      letter-spacing: 0.03em;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     .nav a:hover {
-      opacity: 0.7;
+      color: #4682B4;
+      transform: scale(1.05);
     }
     .main-content {
       margin-left: 245px;
@@ -90,9 +91,10 @@
       font-size: 0.9em;
       border-top: 1px solid #000000;
       margin-left: 245px;
-      display: flex; /* Use flexbox for layout */
-      justify-content: space-between; /* Space between left and right content */
-      align-items: center; /* Vertically center items */
+      display: flex;
+      justify-content: center; /* Changed: Center content */
+      align-items: center;
+      text-align: center; /* Added: Ensure text alignment is centered */
     }
     footer a {
       color: #000000;
@@ -104,11 +106,12 @@
       opacity: 0.7;
     }
     footer span.connect {
-      display: inline; /* Ensure inline display */
+      display: inline;
+      margin-right: 1em; /* Added: Space between connect and update text */
     }
     footer span.update {
-      display: inline; /* Ensure inline display */
-      white-space: nowrap; /* Prevent wrapping */
+      display: inline;
+      white-space: nowrap;
     }
     @media (max-width: 600px) {
       .nav {
@@ -124,9 +127,8 @@
       }
       footer {
         margin-left: 0;
-      }
-      .about h2 {
-        font-size: 1.5em;
+        flex-direction: column; /* Added: Stack content vertically on small screens */
+        gap: 0.5em; /* Added: Space between stacked elements */
       }
     }
   </style>
@@ -137,16 +139,15 @@
     <ul>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="opinion.html">Opinion</a></li>
-      </ul>
+    </ul>
   </nav>
   <div class="main-content">
     <section class="about">
       <h4>Hi, I'm Devanath<br>
       Welcome to my personal webpage</h4>
-     <p>I work as a Scientific Assistant (Library) at the International Centre for Theoretical Sciences <a href="https://www.icts.res.in/" target="_blank">(ICTS-TIFR)</a>, Bangalore. <a href="https://library.icts.res.in/" target="_blank">This is</a> the Library page that I manage and it tells (briefly) you what I do. I worked at Dayananda Sagar Institutions, and NITTE for about 3 years in each</p>
+      <p>I work as a Scientific Assistant (Library) at the International Centre for Theoretical Sciences <a href="https://www.icts.res.in/" target="_blank">(ICTS-TIFR)</a>, Bangalore. <a href="https://library.icts.res.in/" target="_blank">This is</a> the Library page that I manage and it tells (briefly) you what I do. I worked at Dayananda Sagar Institutions, and NITTE for about 3 years in each</p>
       <p>I hold a [your degree, e.g., Bachelor’s in Design] from [your institution]. My recent work includes [briefly describe a project or achievement, e.g., creating a blog platform or organizing a community event].</p>
       <p>When I’m not working, you’ll find me [your hobbies, e.g., sketching, hiking, or trying new recipes]. This site is my personal corner to share my journey and ideas.</p>
-    
     </section>
   </div>
   <footer>
