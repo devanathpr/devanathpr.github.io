@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Devanath P R</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -26,14 +27,15 @@
       flex-direction: column;
       align-items: flex-start;
       z-index: 1000;
+      font-family: 'Patrick Hand', handwriting;
     }
     .nav .name {
-      font-size: 1.4em;
-      font-weight: 700;
-      color: #000000;
+      font-size: 1.6em;
+      color: #6B8E23;
       text-decoration: none;
-      text-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
       margin-bottom: 1.5em;
+      letter-spacing: 0.05em;
     }
     .nav ul {
       list-style: none;
@@ -48,22 +50,23 @@
     .nav a {
       color: #000000;
       text-decoration: none;
-      font-size: 1em;
-      font-weight: 400;
-      transition: opacity 0.3s ease;
+      font-size: 1.2em;
+      letter-spacing: 0.03em;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
     .nav a:hover {
-      opacity: 0.7;
+      color: #4682B4;
+      transform: scale(1.05);
     }
     .main-content {
-      margin-left: 240px;
+      margin-left: 245px;
       max-width: 800px;
       padding: 2em 1.5em;
     }
     .about h2 {
       font-size: 1.8em;
       color: #000000;
-      text-align: center;
+      text-align: justify;
       margin-bottom: 1em;
       font-weight: 700;
     }
@@ -73,7 +76,7 @@
       color: #333333;
     }
     .about a {
-      color: #000000;
+      color: #484848;
       text-decoration: underline;
       font-weight: 400;
       transition: opacity 0.3s ease;
@@ -84,11 +87,14 @@
     footer {
       background: transparent;
       color: #000000;
-      text-align: center;
       padding: 1em 0;
       font-size: 0.9em;
       border-top: 1px solid #000000;
-      margin-left: 240px;
+      margin-left: 245px;
+      display: flex;
+      justify-content: center; /* Changed: Center content */
+      align-items: center;
+      text-align: center; /* Added: Ensure text alignment is centered */
     }
     footer a {
       color: #000000;
@@ -98,6 +104,14 @@
     }
     footer a:hover {
       opacity: 0.7;
+    }
+    footer span.connect {
+      display: inline;
+      margin-right: 1em; /* Added: Space between connect and update text */
+    }
+    footer span.update {
+      display: inline;
+      white-space: nowrap;
     }
     @media (max-width: 600px) {
       .nav {
@@ -113,9 +127,8 @@
       }
       footer {
         margin-left: 0;
-      }
-      .about h2 {
-        font-size: 1.5em;
+        flex-direction: column; /* Added: Stack content vertically on small screens */
+        gap: 0.5em; /* Added: Space between stacked elements */
       }
     }
   </style>
@@ -126,7 +139,7 @@
     <ul>
       <li><a href="projects.html">Projects</a></li>
       <li><a href="opinion.html">Opinion</a></li>
-      </ul>
+    </ul>
   </nav>
   <div class="main-content">
     <section class="projects">
