@@ -228,6 +228,46 @@ section.block > p {
   padding-top: 24px;
 }
 
+/* ---------- year filter ---------- */
+
+.year-filter {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 4px 0 22px;
+}
+
+.year-pill {
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: 0.03em;
+  background: none;
+  border: 1px solid var(--rule-strong);
+  color: var(--ink-soft);
+  padding: 7px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.year-pill:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+.year-pill.is-active {
+  background: var(--green);
+  border-color: var(--green);
+  color: var(--paper);
+}
+
+.no-results {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--ink-soft);
+  padding: 20px 0;
+}
+
 /* ---------- index card (publications / works) ---------- */
 
 .index-card {
