@@ -128,7 +128,7 @@ nav.primary-nav a[aria-current="page"] {
   text-transform: uppercase;
   color: var(--gold);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 10px;
   margin-bottom: 14px;
 }
@@ -138,6 +138,19 @@ nav.primary-nav a[aria-current="page"] {
   height: 1px;
   background: var(--gold);
   display: inline-block;
+  flex-shrink: 0;
+  margin-top: 0.65em;
+}
+
+@media (max-width: 480px) {
+  .eyebrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .eyebrow::before {
+    margin-top: 0;
+  }
 }
 
 /* ---------- hero ---------- */
