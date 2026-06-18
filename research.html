@@ -40,7 +40,7 @@
   <section class="block shell">
     <p class="eyebrow">Journal articles &amp; conference proceedings</p>
 
-    <div class="year-filter" role="group" aria-label="Filter by year">
+    <div class="year-filter" role="group" aria-label="Filter publications by year" data-filter-group="publications">
       <button type="button" class="year-pill is-active" data-year="all">All</button>
       <button type="button" class="year-pill" data-year="2026">2026</button>
       <button type="button" class="year-pill" data-year="2025">2025</button>
@@ -105,14 +105,21 @@
       </div>
     </div>
 
-    <p class="no-results" hidden>No entries for this year.</p>
+    <p class="no-results" data-no-results="publications" hidden>No entries for this year.</p>
 
   </section>
 
   <section class="block shell">
     <p class="eyebrow">Invited talks &amp; speeches</p>
 
-    <div class="index-card">
+    <div class="year-filter" role="group" aria-label="Filter talks by year" data-filter-group="talks">
+      <button type="button" class="year-pill is-active" data-year="all">All</button>
+      <button type="button" class="year-pill" data-year="2026">2026</button>
+      <button type="button" class="year-pill" data-year="2025">2025</button>
+      <button type="button" class="year-pill" data-year="2024">2024</button>
+    </div>
+
+    <div class="index-card" data-year="2026">
       <div class="acc"><span class="year">2026</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -121,7 +128,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -130,7 +137,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -139,7 +146,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -148,7 +155,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -157,7 +164,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2024">
       <div class="acc"><span class="year">2024</span>Talk</div>
       <div>
         <span class="stamp talk">Talk</span>
@@ -165,6 +172,8 @@
         <p class="venue">NITTE Education Trust · 11 Jan 2024</p>
       </div>
     </div>
+
+    <p class="no-results" data-no-results="talks" hidden>No entries for this year.</p>
 
   </section>
 
@@ -188,27 +197,37 @@
 
 <script>
 (function () {
-  var pills = document.querySelectorAll('.year-pill');
-  var cards = document.querySelectorAll('.index-card[data-year]');
-  var noResults = document.querySelector('.no-results');
+  // Each .year-filter group controls only the .index-card elements within
+  // its own parent <section>, so the publications filter and the talks
+  // filter operate independently.
+  var groups = document.querySelectorAll('.year-filter');
 
-  pills.forEach(function (pill) {
-    pill.addEventListener('click', function () {
-      var year = pill.getAttribute('data-year');
+  groups.forEach(function (group) {
+    var section = group.closest('section');
+    if (!section) return;
 
-      pills.forEach(function (p) { p.classList.remove('is-active'); });
-      pill.classList.add('is-active');
+    var pills = group.querySelectorAll('.year-pill');
+    var cards = section.querySelectorAll('.index-card[data-year]');
+    var noResults = section.querySelector('.no-results');
 
-      var visibleCount = 0;
-      cards.forEach(function (card) {
-        var show = (year === 'all') || (card.getAttribute('data-year') === year);
-        card.hidden = !show;
-        if (show) visibleCount++;
+    pills.forEach(function (pill) {
+      pill.addEventListener('click', function () {
+        var year = pill.getAttribute('data-year');
+
+        pills.forEach(function (p) { p.classList.remove('is-active'); });
+        pill.classList.add('is-active');
+
+        var visibleCount = 0;
+        cards.forEach(function (card) {
+          var show = (year === 'all') || (card.getAttribute('data-year') === year);
+          card.hidden = !show;
+          if (show) visibleCount++;
+        });
+
+        if (noResults) {
+          noResults.hidden = visibleCount !== 0;
+        }
       });
-
-      if (noResults) {
-        noResults.hidden = visibleCount !== 0;
-      }
     });
   });
 })();
