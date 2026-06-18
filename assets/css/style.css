@@ -67,6 +67,12 @@ button:focus-visible,
   padding: 0 24px;
 }
 
+@media (max-width: 480px) {
+  .shell {
+    padding: 0 28px;
+  }
+}
+
 /* ---------- header / nav ---------- */
 
 .site-header {
