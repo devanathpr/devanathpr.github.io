@@ -40,7 +40,14 @@
   <section class="block shell">
     <p class="eyebrow">Journal articles &amp; conference proceedings</p>
 
-    <div class="index-card">
+    <div class="year-filter" role="group" aria-label="Filter by year">
+      <button type="button" class="year-pill is-active" data-year="all">All</button>
+      <button type="button" class="year-pill" data-year="2026">2026</button>
+      <button type="button" class="year-pill" data-year="2025">2025</button>
+      <button type="button" class="year-pill" data-year="2024">2024</button>
+    </div>
+
+    <div class="index-card" data-year="2026">
       <div class="acc"><span class="year">2026</span>Sci&shy;ento&shy;metrics</div>
       <div>
         <span class="stamp">Journal article</span>
@@ -50,7 +57,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>ALIS</div>
       <div>
         <span class="stamp">Journal article</span>
@@ -60,7 +67,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2025">
       <div class="acc"><span class="year">2025</span>Conf. Proc.</div>
       <div>
         <span class="stamp">Conference proceedings</span>
@@ -69,7 +76,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2024">
       <div class="acc"><span class="year">2024</span>LISACON</div>
       <div>
         <span class="stamp">Conference proceedings</span>
@@ -78,7 +85,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2024">
       <div class="acc"><span class="year">2024</span>JISM</div>
       <div>
         <span class="stamp">Journal article</span>
@@ -88,7 +95,7 @@
       </div>
     </div>
 
-    <div class="index-card">
+    <div class="index-card" data-year="2024">
       <div class="acc"><span class="year">2024</span>SIJSS</div>
       <div>
         <span class="stamp">Journal article</span>
@@ -97,6 +104,8 @@
         <p class="meta">DOI: <a href="https://doi.org/10.62656/sijss.v22i3.871" target="_blank" rel="noopener">10.62656/sijss.v22i3.871</a> · ISSN 0972-8945</p>
       </div>
     </div>
+
+    <p class="no-results" hidden>No entries for this year.</p>
 
   </section>
 
@@ -164,7 +173,7 @@
     <ul class="distinctions">
       <li><span class="year">2025</span> Best Young Researcher Award — Dept. of Library and Information Science, Bangalore University</li>
       <li><span class="year">2024</span> Best Paper Award — Jain University</li>
-      <li><span class="year">2016</span> Gold Medal — MLISc, Bangalore University</li>
+      <li><span class="year">2016</span> Gold Medal — M.LISc, Bangalore University</li>
     </ul>
   </section>
 
@@ -176,6 +185,34 @@
     <span>Last updated June 2026</span>
   </div>
 </footer>
+
+<script>
+(function () {
+  var pills = document.querySelectorAll('.year-pill');
+  var cards = document.querySelectorAll('.index-card[data-year]');
+  var noResults = document.querySelector('.no-results');
+
+  pills.forEach(function (pill) {
+    pill.addEventListener('click', function () {
+      var year = pill.getAttribute('data-year');
+
+      pills.forEach(function (p) { p.classList.remove('is-active'); });
+      pill.classList.add('is-active');
+
+      var visibleCount = 0;
+      cards.forEach(function (card) {
+        var show = (year === 'all') || (card.getAttribute('data-year') === year);
+        card.hidden = !show;
+        if (show) visibleCount++;
+      });
+
+      if (noResults) {
+        noResults.hidden = visibleCount !== 0;
+      }
+    });
+  });
+})();
+</script>
 
 </body>
 </html>
