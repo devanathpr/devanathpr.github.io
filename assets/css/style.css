@@ -267,7 +267,9 @@ section.block > p {
   color: var(--ink-soft);
   padding: 20px 0;
 }
-
+[hidden] {
+  display: none !important;
+}
 /* ---------- index card (publications / works) ---------- */
 
 .index-card {
