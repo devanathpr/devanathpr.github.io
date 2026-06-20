@@ -175,6 +175,43 @@ nav.primary-nav a[aria-current="page"] {
   border-bottom: 1px solid var(--rule);
 }
 
+.hero-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.hero-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-portrait {
+  flex-shrink: 0;
+}
+
+.hero-portrait img {
+  width: 108px;
+  height: 108px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  border: 2px solid var(--rule);
+  filter: grayscale(20%);
+}
+
+@media (max-width: 480px) {
+  .hero-inner {
+    flex-direction: column-reverse;
+    gap: 20px;
+  }
+  .hero-portrait img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
 .hero h1 {
   font-family: var(--serif);
   font-size: clamp(32px, 5vw, 46px);
