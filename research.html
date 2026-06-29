@@ -193,10 +193,15 @@
 
 <script>
 (function () {
+  // Each .year-filter group controls only the .index-card elements within
+  // its own parent <section>, so the publications filter and the talks
+  // filter operate independently.
   var groups = document.querySelectorAll('.year-filter');
+
   groups.forEach(function (group) {
     var section = group.closest('section');
     if (!section) return;
+
     var pills = group.querySelectorAll('.year-pill');
     var cards = section.querySelectorAll('.index-card[data-year]');
     var noResults = section.querySelector('.no-results');
@@ -204,6 +209,7 @@
     pills.forEach(function (pill) {
       pill.addEventListener('click', function () {
         var year = pill.getAttribute('data-year');
+
         pills.forEach(function (p) { p.classList.remove('is-active'); });
         pill.classList.add('is-active');
 
