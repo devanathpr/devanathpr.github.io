@@ -1,18 +1,19 @@
 /* ============================================================
-   Devanath P R — Professional Academic Site
-   Clean, scholarly aesthetic (inspired by academic templates)
+   Devanath P R — Professional Academic Personal Website
+   Clean scholarly design with premium fonts
    ============================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600;8..60,700&family=Inter:wght@400;500;600;700&family=PT+Serif:wght@400;700&display=swap');
 
 :root {
   --paper: #FAF9F5;
   --ink: #1F2022;
-  --ink-soft: #555555;
+  --ink-soft: #4F4F4F;
   --accent: #2C3E2F;
-  --accent-light: #4A6B52;
+  --accent-light: #5A7A66;
   --gold: #8C6F2E;
-  --rule: #E5E2D8;
+  --rule: #E8E4D8;
+  --max-w: 780px;
 }
 
 * { box-sizing: border-box; }
@@ -22,142 +23,178 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.7;
-  font-size: 15.5px;
+  line-height: 1.75;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3 {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-weight: 600;
-  line-height: 1.2;
+h1, h2, h3, .brand {
+  font-family: 'PT Serif', Georgia, serif;
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+.eyebrow, .stamp, .year-pill, nav {
+  font-family: 'Inter', system-ui, sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 a {
   color: var(--accent);
-  text-decoration: underline;
-  text-underline-offset: 3px;
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
 }
-a:hover { color: var(--gold); }
-
-/* Layout */
-.shell {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 0 24px;
+a:hover {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
 }
 
+/* Header */
 .site-header {
   border-bottom: 1px solid var(--rule);
-  padding: 24px 0;
+  padding: 28px 0 20px;
   background: var(--paper);
 }
 
+.shell {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
 .brand {
-  font-family: 'Source Serif 4', Georgia, serif;
-  font-size: 22px;
-  font-weight: 600;
+  font-size: 23px;
   color: var(--ink);
   text-decoration: none;
 }
 
 .primary-nav ul {
   display: flex;
-  gap: 28px;
+  gap: 32px;
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
   font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .primary-nav a {
   color: var(--ink-soft);
-  text-decoration: none;
   padding-bottom: 4px;
-  border-bottom: 2px solid transparent;
 }
 .primary-nav a[aria-current="page"],
 .primary-nav a:hover {
   color: var(--accent);
-  border-bottom-color: var(--gold);
+  border-bottom: 2px solid var(--gold);
 }
 
-/* Hero & Sections */
+/* Hero */
 .hero {
-  padding: 60px 0 40px;
+  padding: 72px 0 48px;
+  border-bottom: 1px solid var(--rule);
+}
+
+.hero-inner {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.hero-portrait img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid var(--rule);
+  object-fit: cover;
+}
+
+/* Sections */
+.block {
+  padding: 48px 0;
   border-bottom: 1px solid var(--rule);
 }
 
 .eyebrow {
   font-size: 13px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 12px;
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.eyebrow::before {
+  content: '';
+  height: 1px;
+  width: 40px;
+  background: var(--gold);
 }
 
-.hero-portrait img {
-  width: 128px;
-  height: 128px;
-  border-radius: 50%;
-  border: 3px solid var(--rule);
-  object-fit: cover;
-}
-
-.index-card, .timeline-entry {
-  padding: 20px 0;
-  border-top: 1px solid var(--rule);
+/* Cards */
+.index-card {
   display: grid;
-  grid-template-columns: 100px 1fr;
-  gap: 20px;
+  grid-template-columns: 110px 1fr;
+  gap: 24px;
+  padding: 24px 0;
+  border-top: 1px solid var(--rule);
 }
 
-.index-card h3, .timeline-entry h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
+.index-card .acc .year {
+  font-size: 21px;
+  color: var(--accent);
+  font-weight: 600;
 }
 
 .stamp {
-  display: inline-block;
   font-size: 12px;
-  padding: 2px 10px;
+  padding: 3px 11px;
   border: 1px solid var(--accent-light);
   color: var(--accent-light);
-  border-radius: 3px;
-  margin-bottom: 8px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Filters */
+.year-filter {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 20px 0 32px;
 }
 
 .year-pill {
-  background: none;
+  background: transparent;
   border: 1px solid var(--rule);
-  padding: 6px 14px;
-  border-radius: 999px;
+  color: var(--ink-soft);
+  padding: 8px 18px;
+  border-radius: 9999px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 13.5px;
+  transition: all 0.2s;
 }
 
-.year-pill.is-active {
+.year-pill.is-active,
+.year-pill:hover {
   background: var(--accent);
   color: white;
   border-color: var(--accent);
 }
 
-/* More styles (distinctions, contact, footer, etc.) */
-.distinctions li, .contact-list li {
-  padding: 12px 0;
+/* Footer */
+.site-footer {
+  padding: 48px 0 32px;
+  color: var(--ink-soft);
+  font-size: 14px;
+  text-align: center;
   border-top: 1px solid var(--rule);
 }
 
-.site-footer {
-  padding: 40px 0;
-  color: var(--ink-soft);
-  font-size: 13px;
-  text-align: center;
-}
-
 /* Responsive */
-@media (max-width: 600px) {
-  .index-card, .timeline-entry { grid-template-columns: 1fr; }
+@media (max-width: 640px) {
+  .index-card, .timeline-entry {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
   .shell { padding: 0 20px; }
 }
