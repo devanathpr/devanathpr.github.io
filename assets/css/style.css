@@ -16,9 +16,9 @@
   --rule: #D8D4C9;
   --rule-strong: #B9B4A4;
 
-  --serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --mono: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --serif: 'Source Serif 4', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --mono: 'IBM Plex Mono', 'SF Mono', monospace;
 
   --max-w: 760px;
 }
@@ -43,8 +43,8 @@ body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: var(--mono);
-  font-size: 15.5px;
+  font-family: var(--sans);
+  font-size: 16px;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-wrap: break-word;
@@ -307,6 +307,7 @@ section.block > p {
 [hidden] {
   display: none !important;
 }
+
 /* ---------- index card (publications / works) ---------- */
 
 .index-card {
@@ -419,111 +420,3 @@ section.block > p {
   border-top: 1px solid var(--rule);
 }
 .distinctions li:first-child { border-top: 1px solid var(--rule); }
-.distinctions .year {
-  font-family: var(--mono);
-  font-size: 13px;
-  color: var(--gold);
-  flex-shrink: 0;
-  width: 46px;
-}
-
-/* ---------- pull quote / focus statement ---------- */
-
-.focus-statement {
-  font-family: var(--serif);
-  font-size: 20px;
-  line-height: 1.55;
-  color: var(--ink);
-  border-left: 3px solid var(--gold);
-  padding: 4px 0 4px 20px;
-  margin: 8px 0 0;
-  max-width: 56ch;
-}
-
-/* ---------- contact ---------- */
-
-.contact-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-}
-.contact-list li {
-  display: flex;
-  align-items: baseline;
-  gap: 14px;
-  font-size: 16px;
-  flex-wrap: wrap;
-}
-.contact-list .label {
-  font-family: var(--mono);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 0.06em;
-  color: var(--rule-strong);
-  width: 88px;
-  flex-shrink: 0;
-}
-
-/* ---------- footer ---------- */
-
-.site-footer {
-  padding: 28px 0 40px;
-}
-.site-footer .shell {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  font-family: var(--mono);
-  font-size: 12px;
-  color: var(--rule-strong);
-}
-.site-footer a { color: var(--ink-soft); }
-
-/* ---------- buttons / CTA ---------- */
-
-.btn-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 22px; }
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--mono);
-  font-size: 13px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  text-decoration: none;
-  padding: 11px 18px;
-  border: 1px solid var(--ink);
-  color: var(--ink);
-  transition: background 0.15s ease, color 0.15s ease;
-}
-.btn:hover {
-  background: var(--green);
-  color: var(--paper);
-  border-color: var(--green);
-}
-.btn.ghost {
-  border-color: var(--rule-strong);
-  color: var(--ink-soft);
-}
-.btn.ghost:hover {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
-
-/* ---------- responsive ---------- */
-
-@media (max-width: 600px) {
-  .index-card { grid-template-columns: 1fr; gap: 6px; }
-  .index-card .acc { display: flex; align-items: center; gap: 10px; }
-  .timeline-entry { grid-template-columns: 1fr; gap: 4px; }
-  nav.primary-nav ul { gap: 16px; }
-  .site-header .shell { flex-direction: column; align-items: flex-start; }
-  .contact-list li { flex-direction: column; gap: 4px; }
-  .contact-list .label { width: auto; }
-}
