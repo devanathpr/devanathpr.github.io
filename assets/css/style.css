@@ -16,9 +16,9 @@
   --rule: #D8D4C9;
   --rule-strong: #B9B4A4;
 
-  --serif: 'Source Serif 4', Georgia, serif;
-  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --mono: 'IBM Plex Mono', 'SF Mono', monospace;
+  --serif: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --mono: "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --max-w: 760px;
 }
